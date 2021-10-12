@@ -9,6 +9,52 @@ void main() {
   );
 }
 
+class PhysicsCardDragDemo extends StatelessWidget {
+  const PhysicsCardDragDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: const DraggableCard(
+        child: FlutterLogo(
+          size: 128,
+        ),
+      ),
+    );
+  }
+}
+
+class DraggableCard extends StatefulWidget {
+  const DraggableCard({required this.child, Key? key}) : super(key: key);
+
+  final Widget child;
+
+  @override
+  _DraggableCardState createState() => _DraggableCardState();
+}
+
+class _DraggableCardState extends State<DraggableCard> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      child: Card(
+        child: widget.child,
+      ),
+    );
+  }
+}
+
 // #docregion MyApp
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -150,11 +196,11 @@ class Page1 extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(_createRoute());
           },
-          child: const Text('Go!'),
+          child: const Text('Startup name generator!'),
         ),
       ),
     );
-  }
+  }                                                                                                                                 
 }
 
 Route _createRoute() {
