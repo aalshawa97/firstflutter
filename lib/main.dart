@@ -196,7 +196,7 @@ class Page1 extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(_createRoute());
           },
-          child: const Text('Startup name generator!'),
+          child: PhysicsCardDragDemo(),//child: const Text('Startup name generator!'),
         ),
       ),
     );
