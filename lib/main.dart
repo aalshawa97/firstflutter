@@ -16,10 +16,13 @@ class PhysicsCardDragDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const DraggableCard(
-        child: FlutterLogo(
-          size: 128,
-        ),
+      body: Column(
+        children: <Widget>[
+          //all the children widgets that you need
+          FlutterLogo(
+            size: 128,
+          ),
+          const Text('Startup name generator!'),],
       ),
     );
   }
@@ -196,7 +199,7 @@ class Page1 extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(_createRoute());
           },
-          child: PhysicsCardDragDemo(),//child: const Text('Startup name generator!'),
+          child: const PhysicsCardDragDemo(),//child: const Text('Startup name generator!'),
         ),
       ),
     );
